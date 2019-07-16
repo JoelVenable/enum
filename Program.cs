@@ -1,12 +1,23 @@
 ﻿using System;
 
-namespace enum
+namespace enum_tutorial
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+      int solution;
+
+      DoubleIt(15, out solution);
+
+      System.Console.WriteLine(solution);
     }
+
+    static void DoubleIt(int x, out int solution)
+    {
+
+      solution = x * 2;
+
+    }
+  }
 }
