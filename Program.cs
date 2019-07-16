@@ -6,6 +6,16 @@ namespace enum_tutorial
   {
     static void Main(string[] args)
     {
+
+        CarColor car1 = CarColor.Blue;
+
+        PaintCar(car1);
+
+
+
+
+
+
       int solution;
 
       DoubleIt(15, out solution);
@@ -22,6 +32,9 @@ namespace enum_tutorial
       System.Console.WriteLine("1, 2, 3 = {0}", GetSumMore(1, 2, 3));
 
       PrintInfo(zipCode: 15137, name: "Joel");
+
+      System.Console.WriteLine("5.0 + 4.5 = {0}", GetSum(5.0, 4.5));
+      System.Console.WriteLine("5.0 + 4.5 = {0}", GetSum("5.0", "4.5"));
     }
 
     static void DoubleIt(int x, out int solution)
@@ -53,5 +66,33 @@ namespace enum_tutorial
     {
       System.Console.WriteLine($"{name} lives in {zipCode}");
     }
+
+    static double GetSum(double x = 1, double y = 1)
+    {
+      return x + y;
+    }
+    static double GetSum(string x = "1", string y = "1")
+    {
+      double dblX = Convert.ToDouble(x);
+      double dblY = Convert.ToDouble(y);
+
+      return dblX + dblY;
+    }
+
+    enum CarColor : byte
+    {
+      Orange = 1,
+      Blue,
+      Green,
+      Red,
+      Yellow,
+    }
+
+    static void PaintCar(CarColor cc)
+    {
+      System.Console.WriteLine("The car was painted {0} with the code {1}",
+      cc, (int)cc);
+    }
+
   }
 }
