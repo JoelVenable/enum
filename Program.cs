@@ -19,6 +19,7 @@ namespace enum_tutorial
         Swap(ref num1, ref num2);
       System.Console.WriteLine("After Swap num1: {0}, num2 {1}", num1, num2);
 
+    System.Console.WriteLine("1, 2, 3 = {0}", GetSumMore(1,2,3));
     
     }
 
@@ -33,6 +34,15 @@ namespace enum_tutorial
         int temp = num1;
         num1 = num2;
         num2 = temp;
+    }
+
+    static double GetSumMore(params double[] nums) {
+        double sum = 0;
+
+        foreach (int i in nums) {
+            sum += i;
+        }
+        return sum;
     }
   }
 }
